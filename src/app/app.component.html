@@ -1,1 +1,10 @@
-<h1>Works</h1>
+<div class="app__content">
+  <div class="app__menu">
+    <button class="app__button" *ngFor="let route of routes"
+          [routerLink]="route.pathway">
+    {{route.routeName}}
+    </button>
+  </div>
+  
+  <router-outlet></router-outlet>  
+</div>

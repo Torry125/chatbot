@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-
-export class Message {
-  constructor(public author: string, public content: string) {}
+export class Lines {
+  constructor( public author: string, public main: string) {}
 }
 
 @Injectable({
@@ -10,7 +10,28 @@ export class Message {
 })
 
 export class ChatbotService {
-  constructor() { }
+  constructor() {
+  }
+  
+  dialog = new Subject<Lines[]>();
+  
+  dialogList = {
+    "Hello": "Hello",
+    "reserve": "Sorry, I don't understand"
+  };
 
-  dialogue = new 
+  getAnswer(message: string) {
+    const client = new Lines('client', message);  
+    this.dialog.next([client]);
+    const chatBot = new Lines('chatBot', this.getMessage(message));
+    
+    setTimeout(()=>{
+      this.dialog.next([chatBot]);
+    }, 2000);
+  }
+
+  getMessage(question: string){
+    let reply = (this.dialogList as any)[question];
+    return reply || this.dialogList["reserve"];
+  }
 }

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'botfriends';
+  routes = [
+    {
+      pathway: "/chat",
+      routeName: "chat"
+    },
+    {
+      pathway: "/settings",
+      routeName: "settings"
+    }
+  ];
 }

@@ -1,0 +1,9 @@
+<div *ngFor="let line of lines">
+    <div>
+        {{ line.main }}
+    </div>
+</div>
+
+<input [(ngModel)]="currentItem" (keyup.enter)="send()" type="text">
+
+<button (click)="send()">Send</button>

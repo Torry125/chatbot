@@ -1,9 +1,16 @@
-<div *ngFor="let line of lines">
-    <div>
-        {{ line.main }}
+<div class="chat__content">
+    <div class="chat__wrapper">
+        <div class="chat__messages" *ngFor="let line of lines">
+            <div  [ngClass]="{ 'chat__bot': line.author === 'chatBot',
+            'chat__client': line.author === 'client' }">
+                {{ line.main }}
+            </div>
+        </div>
+        
+        <div class="chat__container">
+            <input class="chat__input" [(ngModel)]="currentItem" (keyup.enter)="send()" type="text" placeholder="Message">
+        
+            <button class="chat__button" (click)="send()"></button>
+        </div>
     </div>
 </div>
-
-<input [(ngModel)]="currentItem" (keyup.enter)="send()" type="text">
-
-<button (click)="send()">Send</button>

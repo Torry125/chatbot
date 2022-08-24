@@ -1,0 +1,69 @@
+.chat {
+    $input-background: rgb(33,33,33);
+    $text-color: rgb(255, 255, 255);
+    $bot-background: rgb(118,106,200);
+
+    &__wrapper {
+        max-width: 75rem;
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    &__input {
+        border: 0;
+        width: 100%;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background-color: $input-background;
+        color: $text-color;
+    }
+
+    &__button {
+        background-color: $input-background;
+        border-radius: 50%;
+        height: 5rem;
+        width: 6rem;
+        
+        &::before {
+            content: "\f04b"; 
+            font-family: FontAwesome;
+            font-size: 1.5rem;
+            color: $bot-background;
+        }
+
+        &:hover {
+            background-color: $bot-background;
+            
+            &::before {
+                color: $text-color;
+            } 
+        }
+    }
+
+    &__client,
+    &__bot {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        color: $text-color;
+        font-size: 1.3rem;
+    }
+
+    &__client {
+        word-break: break-all;
+        background-color: $bot-background;
+        margin-left: 10rem;
+    }
+
+    &__bot {
+        background-color: $input-background;
+        margin-right: 10rem;
+    }
+}

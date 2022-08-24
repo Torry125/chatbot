@@ -1,15 +1,60 @@
 .app {
-    &__content {
-        height: 100vh;
-        display: flex;
-    }
+    $font-color: rgb(255,255,255);;
+    $menu-background: rgb(33,33,33);
+    $white: #FFFFFF;
+    $button-hover: rgb(118,106,200);
+    $content-color: rgb(0, 0, 0);
 
+    &__container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+    
     &__menu {
         display: flex;
         flex-direction: column;
+        background-color: $menu-background;
+        padding-top: 5rem;
     }
 
     &__button {
-        
+        font-size: 2rem;
+        line-height: 3rem;
+        color: $font-color;
+        background-color: transparent;
+        padding: 1rem 15rem 1rem 5rem;
+        display: flex;
+        margin: 0 1rem;
+
+        &:hover {
+            background-color: $button-hover;
+            border-radius: 1rem;
+        }
+    }
+    
+    &__content {
+        display: grid;
+        align-content: space-between;
+        background-color: $content-color;
+    }
+    
+    &__chat {        
+        &::before {
+            content: "\f075"; 
+            font-family: FontAwesome;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+    }
+
+    &__setting {
+        &::before {
+            content: "\f013"; 
+            font-family: FontAwesome;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
     }
 }

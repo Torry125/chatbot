@@ -9,11 +9,11 @@ export class AppComponent {
   routes = [
     {
       pathway: "/chat",
-      routeName: "chat"
+      routeName: "Chat"
     },
     {
       pathway: "/settings",
-      routeName: "settings"
+      routeName: "Settings"
     }
   ];
 }

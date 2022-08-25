@@ -14,6 +14,7 @@ export class ChatbotService {
   }
   
   dialog = new Subject<Lines[]>();
+
   
   dialogList = {
     "Hello": "Hello",
@@ -33,5 +34,14 @@ export class ChatbotService {
   getMessage(question: string){
     let reply = (this.dialogList as any)[question];
     return reply || this.dialogList["reserve"];
+  }
+
+  getWebhook(url: string, secret: string) {
+    const webhooks = {
+      webhook: url,
+      websecret: secret 
+    }
+
+    window.localStorage.setItem('webhook', JSON.stringify(webhooks));
   }
 }

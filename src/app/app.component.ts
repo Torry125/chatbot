@@ -18,7 +18,7 @@ export class AppComponent {
 
   settings = {
     routeName: "Settings"
-  }
+  };
 
   openDialog(){
     this.dialogRef.open(SettingsComponent,{

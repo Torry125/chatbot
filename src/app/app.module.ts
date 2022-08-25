@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatBotModule } from './chat-bot/chat-bot.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ChatBotModule } from './chat-bot/chat-bot.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ChatBotModule
+    ChatBotModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]
 })

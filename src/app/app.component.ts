@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { SettingsComponent } from './chat-bot/settings/settings.component';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  routes = [
-    {
-      pathway: "/chat",
-      routeName: "Chat"
-    },
-    {
-      pathway: "/settings",
-      routeName: "Settings"
-    }
-  ];
+
+  constructor( private dialogRef : MatDialog ) {}
+
+  chat =  {
+    pathway: "/chat",
+    routeName: "Chat",
+  };
+
+  settings = {
+    routeName: "Settings"
+  }
+
+  openDialog(){
+    this.dialogRef.open(SettingsComponent,{
+      data : {
+        name : 'Viktoriia'
+      }
+    });
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  firstName;
+  constructor( @Inject(MAT_DIALOG_DATA) public data: any ) {
+    this.firstName = data.name
+  }
 
   ngOnInit(): void {
   }

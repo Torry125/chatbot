@@ -1,10 +1,13 @@
 <div class="app__container">
   <div class="app__menu">
-    <button class="app__button" *ngFor="let route of routes"
-          [routerLink]="route.pathway"
-          [ngClass]="{ 'app__chat': route.routeName === 'Chat',
-            'app__setting': route.routeName === 'Settings' }">
-    {{route.routeName}}
+    <button class="app__button app__chat"
+          [routerLink]="chat.pathway">
+      {{chat.routeName}}
+    </button>
+
+    <button class="app__button app__settings"
+            (click)="openDialog()">
+    {{settings.routeName}}
     </button>
   </div>
   

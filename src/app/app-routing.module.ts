@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: "chat", 
     component: ChatComponent
-  },
-  {
-    path:"settings", 
-    component: SettingsComponent
   }
 ];
 

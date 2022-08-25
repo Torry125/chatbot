@@ -1,13 +1,13 @@
 <div class="app__container">
   <div class="app__menu">
     <button class="app__chat"
-          [routerLink]="chat.pathway">
-      {{chat.routeName}}
+            [routerLink]="'/chat'">
+      Chat
     </button>
 
     <button class="app__settings"
-            (click)="openDialog()">
-    {{settings.routeName}}
+            (click)="onOpenDialog()">
+      Settings
     </button>
   </div>
   

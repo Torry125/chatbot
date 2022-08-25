@@ -8,9 +8,9 @@
         </div>
         
         <div class="chat__container">
-            <input class="chat__input" [(ngModel)]="currentItem" (keyup.enter)="send()" type="text" placeholder="Message">
+            <input class="chat__input" [(ngModel)]="currentItem" (keyup.enter)="onSendMessage()" type="text" placeholder="Message">
         
-            <button class="chat__button" (click)="send()"></button>
+            <button class="chat__button" (click)="onSendMessage()"></button>
         </div>
     </div>
 </div>

@@ -14,18 +14,18 @@ export class SettingsComponent implements OnInit {
   webhook: string = '';
   webSecret: string = '';
 
-  firstName;
   constructor( public dialogRef: MatDialogRef<SettingsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public chatBotService: ChatbotService ) {
-    this.firstName = data.name
-  }
-
+      let settings = this.chatBotService.getSettings();
+      this.webhook = settings.hook;
+      this.webSecret = settings.websecret;
+    }
 
   ngOnInit(): void {
   }
 
-  onNoClick(): void {
+  onCloseDialog(): void {
     this.dialogRef.close();
   }
 
@@ -33,8 +33,10 @@ export class SettingsComponent implements OnInit {
     let inputValue = (<HTMLInputElement>document.getElementById('checkbox')).checked;
     let inputURL = <HTMLInputElement>document.getElementById('webhook-url');
     if(inputValue === true) {
-      this.chatBotService.getWebhook(this.webhook, this.webSecret);
-    } 
+      this.chatBotService.setSettings(this.webhook, this.webSecret);
+    } else {
+      this.chatBotService.setSettings('', '');
+    }
   }
 
 }

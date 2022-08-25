@@ -11,16 +11,7 @@ export class AppComponent {
 
   constructor( private dialogRef : MatDialog ) {}
 
-  chat =  {
-    pathway: "/chat",
-    routeName: "Chat",
-  };
-
-  settings = {
-    routeName: "Settings"
-  };
-
-  openDialog(){
+  onOpenDialog(){
     this.dialogRef.open(SettingsComponent,{
       data : {
         name : 'Viktoriia'

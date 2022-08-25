@@ -15,12 +15,12 @@ export class ChatComponent implements OnInit {
   constructor(public chatBotService: ChatbotService) { }
 
   ngOnInit() {
-      this.chatBotService.dialog.subscribe((item) => {
+      this.chatBotService.$dialog.subscribe((item) => {
       this.lines = this.lines.concat(item);
     });
   }
 
-  send() {
+  onSendMessage() {
     this.chatBotService.getAnswer(this.currentItem);
     this.currentItem = '';
   }
